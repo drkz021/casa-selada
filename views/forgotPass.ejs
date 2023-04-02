@@ -1,0 +1,77 @@
+<%- include('html_header_tag') -%>
+
+<head>
+    <title>Casa Selada</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords"
+        content="Login Form" />
+    <!-- //Meta tag Keywords -->
+
+    <link href="//fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!--/Style-CSS -->
+    <link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+    <!--//Style-CSS -->
+
+    <script src="https://kit.fontawesome.com/af562a2a63.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <!-- form section start -->
+    <section class="w3l-mockup-form">
+        <div class="notification">
+            <h1 id="notification-message"></h1>
+          </div>
+        <div class="container">
+            <!-- /form -->
+            <div class="workinghny-form-grid">
+                <div class="main-mockup">
+                    <div class="">
+                        <span class=""></span>
+                    </div>
+                    <div class="w3l_form align-self">
+                        <div class="left_grid_info">
+                            <!-- <img src="images/image3.svg" alt=""> -->
+                        </div>
+                    </div>
+                    <div class="content-wthree">
+                        <h2>Forgot Password?</h2>
+                        <p>Please enter your registered email address and we will email your password.</p>
+                        <!-- <?php echo $msg; ?> -->
+                        <!-- <form action="/route/sendSMTP" method="get" class ="forgotPass"></form> -->
+                        <form class ="forgotPass">
+                            <input type="email" class="email" name="email" placeholder="Enter Your Email" required>
+                            <button name="submit" class="btn" type="submit" >Send Reset Link</button>
+                        </form>
+                        <div class="social-icons">
+                            <p>Back to! <a href="/route/casa/login">Login</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //form -->
+        </div>
+       
+    </section>
+    <!-- //form section start -->
+
+    <!-- <script src="js/jquery.min.js"></script> -->
+    <!-- <script>
+        $(document).ready(function (c) {
+            c.preventDefault()
+            $('.forgotPass').on('submit', function (c) {
+                $('.message').innerHTML = 'Email Sent';
+                
+          
+            });
+        });
+    </script> -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/forgotPass.js"></script>
+</body>
+
+<%- include('html_footer_tag') -%>

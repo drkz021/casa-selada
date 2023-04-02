@@ -1,0 +1,802 @@
+<%- include('html_header_tag') -%>
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Selada</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@100;200;300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3ad4d80aee.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <link rel="stylesheet" href="/css/update_styles.css"  type="text/css">
+</head>
+
+<style>
+    #graphcontainer1 {
+        height: auto;
+        width: 855px;
+        margin: 0 auto;
+    }
+
+    #graphcontainer2 {
+        height: auto;
+        width: 855px;
+        margin: 0 auto;
+    }
+
+    #graphcontainer3 {
+        height: auto;
+        width: 855px;
+        margin: 0 auto;
+    }
+
+    .graph {
+        height: 800px;
+        width: 355px;
+    }
+</style>
+
+<body>
+
+    <!-- <center> -->
+    <div>
+        <h1>Environmental and Water Quality</h1>
+    </div>
+    <br>
+    <br>
+
+    <ul class="outer-container-1">
+
+        <!-- 
+			<br>
+			<br>
+			<br>
+			<br> -->
+        <li class="container-1">
+            <b class="label-1">Water Temperature</b>
+            <p class="sensors" id="WaterTemp"></p>
+            <br>
+            <b class="unit1"></b>
+            <i class="fa-solid fa-temperature-half"></i>
+
+            </label>
+            <br>
+        </li>
+
+        <!-- <br>
+			<br> -->
+        <li class="container-2">
+            <b class="label-2">pH</b>
+            <p class="sensors" id="phVal"></p>
+            <br>
+            <b class="unit2"></b>
+            <i class="fa-solid fa-thermometer"></i>
+
+            </label>
+            <br>
+        </li>
+
+        <!-- <br>
+			<br> -->
+        <li class="container-3">
+            <b class="label-3">Electrical Conductivity</b>
+            <p class="sensors" id="EcVal"></p>
+            <br>
+            <b class="unit3"></b>
+            <i class="fa-solid fa-vials"></i>
+
+            </label>
+            <br>
+        </li>
+
+        <!-- <br>
+			<br> -->
+        <li class="container-4">
+            <b class="label-4">Humidity</b>
+            <p class="sensors" id="Humid"></p>
+            <br>
+            <b class="unit4"></b>
+            <i class="fa-solid fa-wind"></i>
+
+            </label>
+            <br>
+        </li>
+
+        <!-- <br>
+			<br> -->
+        <li class="container-5">
+            <b class="label-5">Room Temperature</b>
+            <p class="sensors" id="RoomTemp">265</p>
+            <br>
+            <b class="unit5"></b>
+            <i class="fa-solid fa-temperature-high"></i>
+
+            </label>
+            <br>
+        </li>
+
+
+    </ul>
+
+    <!-- </center> -->
+    <br>
+    <br>
+    <hr style="height:2px;border-width:0;width:95%;color:rgb(180, 180, 180);background-color:rgb(180, 180, 180)">
+    <!-- <center> -->
+    <div>
+        <h1>Control Panel</h1>
+    </div>
+    <br>
+    <br>
+
+    <ul class="outer-container-2">
+
+        <!-- 
+			<br>
+			<br>
+			<br>
+			<br> -->
+        <li class="container-7">
+            <b>Fan Switch</b>
+            <br><br>
+            <input type="checkbox" id="switch" class="checkbox" />
+            <label for="switch" class="toggle-1">
+            </label>
+            <br>
+        </li>
+
+        <!-- <br>
+			<br> -->
+        <li class="container-8">
+            <b>Light Switch</b>
+            <br><br>
+            <input type="checkbox" id="switch1" class="checkbox1" />
+            <label for="switch1" class="toggle-2">
+                <span class="slider"></span>
+            </label>
+            <br>
+        </li>
+
+        <!-- <br>
+			<br> -->
+        <li class="container-9">
+            <b>Pump Switch</b>
+            <br><br>
+            <input type="checkbox" id="switch2" class="checkbox2" />
+            <label for="switch2" class="toggle-3">
+                <span class="slider"></span>
+            </label>
+            <br>
+        </li>
+
+        <!-- <br>
+			<br> -->
+        <li class="container-10">
+            <!-- <br>
+				<br> -->
+            <b>Mist Switch</b>
+            <br><br>
+            <input type="checkbox" id="switch3" class="checkbox3" />
+            <label for="switch3" class="toggle-4">
+                <span class="slider"></span>
+            </label>
+            <br>
+        </li>
+
+        <!-- <br>
+			<br> -->
+        <li class="container-10">
+            <!-- <br>
+				<br> -->
+            <b>Aerator Switch</b>
+            <br><br>
+            <input type="checkbox" id="switch4" class="checkbox4" />
+            <label for="switch4" class="toggle-5">
+                <span class="slider"></span>
+            </label>
+            <br>
+        </li>
+
+
+    </ul>
+
+    <!-- </center> -->
+
+
+    <br>
+
+    <br>
+
+    <br>
+
+    <br>
+
+    <br>
+
+
+    <hr style="height:2px;border-width:0;width:95%;color:rgb(180, 180, 180);background-color:rgb(180, 180, 180)">
+    <div>
+        <h1>Scheduler</h1>
+    </div>
+
+    <div class="container-12">
+        <div class="btn-group">
+            <button id="grow">Grow Light</button>
+            <button id="water">Water Pump</button>
+            <button id="mist">Mist</button>
+            <button id="fan">Fan</button>
+            <button id="aerator">Aerator</button>
+        </div>
+
+    </div>
+    <br>
+
+    <br><br>
+    <div id="grow-light-form">
+        <form>
+            <div class="display">
+                <label for="displayTimeOn">Time to turn ON: </label>
+                <span class="displayTimeOn" id="displayTimeOn"></span>
+                <span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+                <label for="displayTimeOff">Time to turn OFF: </label>
+                <span class="displayTimeOff" id="displayTimeOn"></span>
+
+
+            </div>
+            <br>
+
+            <div class="inputs">
+
+                <label for="time-on">&nbspSelect a time on:&nbsp</label>
+                <input class="form-select" type="time" id="time-on" name="Time_On" required />
+
+                <label for="time-off">&nbsp&nbsp&nbspSelect a time off:&nbsp</label>
+                <input class="form-select" type="time" id="time-off" name="Time_Off" required />
+
+                <br>
+
+
+            </div>
+
+            <br>
+
+            <div class="checklist">
+
+                <input class="form-check-input" type="checkbox" id="select-all" />
+                <label class="form-check-label" for="Everyday"> <span>Everyday</span></label>
+
+                <input class="form-check-input" type="hidden" value="false" id="MondayHidden" name="Monday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Monday" name="Monday" />
+                <label class="form-check-label" for="Monday"> <span>Mon</span></label>
+
+                <input class="form-check-input" type="hidden" value="false" id="TuesdayHidden" name="Tuesday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Tuesday" name="Tuesday" />
+                <label class="form-check-label" for="Tuesday"> <span>Tue</span></label>
+
+                <input class="form-check-input" type="hidden" value="false" id="WednesdayHidden" name="Wednesday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Wednesday" name="Wednesday" />
+                <label class="form-check-label" for="Wednesday">
+                    <span>Wed</span></label>
+
+                <input class="form-check-input" type="hidden" value="false" id="ThursdayHidden" name="Thursday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Thursday" name="Thursday" />
+                <label class="form-check-label" for="Thursday"> <span>Thu</span></label>
+
+                <input class="form-check-input" type="hidden" value="false" id="FridayHidden" name="Friday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Friday" name="Friday" />
+                <label class="form-check-label" for="Friday"> <span>Fri</span></label>
+
+                <input class="form-check-input" type="hidden" value="false" id="SaturdayHidden" name="Saturday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Saturday" name="Saturday" />
+                <label class="form-check-label" for="Saturday">
+                    <span>Sat</span>
+                </label>
+
+                <input class="form-check-input" type="hidden" value="false" id="SundayHidden" name="Sunday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Sunday" name="Sunday" />
+                <label class="form-check-label" for="Sunday"> <span>Sun</span></label>
+
+            </div>
+
+
+            <br>
+
+            <br>
+            <div class="container">
+
+                <!-- <button class="btn-submit">Set Schedule</button>
+                 -->
+                <button class="reset">Reset</button>
+
+            </div>
+
+        </form>
+    </div>
+
+    <div id="water-pump-form">
+        <form>
+            <div class="display">
+                <label for="displayTimeOn">Time to turn ON: </label>
+                <span class="displayTimeOn" id="displayTimeOn"></span>
+                <span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+                <label for="displayTimeOff">Time to turn OFF: </label>
+                <span class="displayTimeOff" id="displayTimeOn"></span>
+
+
+            </div>
+            <br>
+
+            <div class="inputs">
+
+                <label for="time-on">&nbspSelect a time on:&nbsp</label>
+                <input class="form-select" type="time" id="time-on1" name="Time_On" required />
+
+                <label for="time-off">&nbsp&nbsp&nbspSelect a time off:&nbsp</label>
+                <input class="form-select" type="time" id="time-off1" name="Time_Off" required />
+
+                <br>
+
+
+            </div>
+
+            <br>
+
+            <div class="checklist">
+
+                <input class="form-check-input" type="checkbox" id="select-all1" />
+                <label class="form-check-label" for="Everyday"> <span>Everyday</span></label>
+
+                <input class="form-check-input" type="hidden" value="false" id="MondayHidden" name="Monday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Monday1" name="Monday" />
+                <label class="form-check-label" for="Monday"> <span>Mon</span></label>
+
+                <input class="form-check-input" type="hidden" value="false" id="TuesdayHidden" name="Tuesday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Tuesday1" name="Tuesday" />
+                <label class="form-check-label" for="Tuesday"> <span>Tue</span></label>
+
+                <input class="form-check-input" type="hidden" value="false" id="WednesdayHidden" name="Wednesday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Wednesday1" name="Wednesday" />
+                <label class="form-check-label" for="Wednesday">
+                    <span>Wed</span></label>
+
+                <input class="form-check-input" type="hidden" value="false" id="ThursdayHidden" name="Thursday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Thursday1" name="Thursday" />
+                <label class="form-check-label" for="Thursday"> <span>Thu</span></label>
+
+                <input class="form-check-input" type="hidden" value="false" id="FridayHidden" name="Friday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Friday1" name="Friday" />
+                <label class="form-check-label" for="Friday"> <span>Fri</span></label>
+
+                <input class="form-check-input" type="hidden" value="false" id="SaturdayHidden" name="Saturday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Saturday1" name="Saturday" />
+                <label class="form-check-label" for="Saturday">
+                    <span>Sat</span>
+                </label>
+
+                <input class="form-check-input" type="hidden" value="false" id="SundayHidden" name="Sunday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Sunday1" name="Sunday" />
+                <label class="form-check-label" for="Sunday"> <span>Sun</span></label>
+
+            </div>
+
+
+            <br>
+            <br>
+            <div class="container">
+
+                <!-- <button class="btn-submit">Set Schedule</button>
+                 -->
+                <button class="reset1">Reset</button>
+
+            </div>
+
+        </form>
+    </div>
+
+    <div id="mist-form">
+        <form>
+            <div class="display">
+                <label for="displayTimeOn">Time to turn ON: </label>
+                <span class="displayTimeOn" id="displayTimeOn"></span>
+                <span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+                <label for="displayTimeOff">Time to turn OFF: </label>
+                <span class="displayTimeOff" id="displayTimeOn"></span>
+
+
+            </div>
+            <br>
+
+            <div class="inputs">
+
+                <label for="time-on">&nbspSelect a time on:&nbsp</label>
+                <input class="form-select" type="time" id="time-on2" name="Time_On" required />
+
+                <label for="time-off">&nbsp&nbsp&nbspSelect a time off:&nbsp</label>
+                <input class="form-select" type="time" id="time-off2" name="Time_Off" required />
+
+                <br>
+
+
+            </div>
+
+            <br>
+
+            <div class="checklist">
+
+                <input class="form-check-input" type="checkbox" id="select-all2" />
+                <label class="form-check-label" for="Everyday"> <span>Everyday</span></label>
+
+                <input class="form-check-input" type="hidden" value="false" id="MondayHidden" name="Monday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Monday2" name="Monday" />
+                <label class="form-check-label" for="Monday"> <span>Mon</span></label>
+
+                <input class="form-check-input" type="hidden" value="false" id="TuesdayHidden" name="Tuesday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Tuesday2" name="Tuesday" />
+                <label class="form-check-label" for="Tuesday"> <span>Tue</span></label>
+
+                <input class="form-check-input" type="hidden" value="false" id="WednesdayHidden" name="Wednesday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Wednesday2" name="Wednesday" />
+                <label class="form-check-label" for="Wednesday">
+                    <span>Wed</span></label>
+
+                <input class="form-check-input" type="hidden" value="false" id="ThursdayHidden" name="Thursday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Thursday2" name="Thursday" />
+                <label class="form-check-label" for="Thursday"> <span>Thu</span></label>
+
+                <input class="form-check-input" type="hidden" value="false" id="FridayHidden" name="Friday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Friday2" name="Friday" />
+                <label class="form-check-label" for="Friday"> <span>Fri</span></label>
+
+                <input class="form-check-input" type="hidden" value="false" id="SaturdayHidden" name="Saturday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Saturday2" name="Saturday" />
+                <label class="form-check-label" for="Saturday">
+                    <span>Sat</span>
+                </label>
+
+                <input class="form-check-input" type="hidden" value="false" id="SundayHidden" name="Sunday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Sunday2" name="Sunday" />
+                <label class="form-check-label" for="Sunday"> <span>Sun</span></label>
+
+            </div>
+
+
+            <br>
+            <br>
+            <div class="container">
+
+                <!-- <button class="btn-submit">Set Schedule</button>
+                 -->
+                <button class="reset2">Reset</button>
+
+            </div>
+
+        </form>
+    </div>
+
+    <div id="fan-form">
+        <form>
+            <div class="display">
+                <label for="displayTimeOn">Time to turn ON: </label>
+                <span class="displayTimeOn" id="displayTimeOn"></span>
+                <span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+                <label for="displayTimeOff">Time to turn OFF: </label>
+                <span class="displayTimeOff" id="displayTimeOn"></span>
+
+            </div>
+            <br>
+
+            <div class="inputs">
+
+                <label for="time-on">&nbspSelect a time on:&nbsp</label>
+                <input class="form-select" type="time" id="time-on3" name="Time_On" required />
+
+                <label for="time-off">&nbsp&nbsp&nbspSelect a time off:&nbsp</label>
+                <input class="form-select" type="time" id="time-off3" name="Time_Off" required />
+
+                <br>
+
+
+            </div>
+
+            <br>
+
+            <div class="checklist">
+
+                <input class="form-check-input" type="checkbox" id="select-all3" />
+                <label class="form-check-label" for="Everyday"> <span>Everyday</span></label>
+
+                <input class="form-check-input" type="hidden" value="false" id="MondayHidden" name="Monday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Monday3" name="Monday" />
+                <label class="form-check-label" for="Monday"> <span>Mon</span></label>
+
+                <input class="form-check-input" type="hidden" value="false" id="TuesdayHidden" name="Tuesday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Tuesday3" name="Tuesday" />
+                <label class="form-check-label" for="Tuesday"> <span>Tue</span></label>
+
+                <input class="form-check-input" type="hidden" value="false" id="WednesdayHidden" name="Wednesday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Wednesday3" name="Wednesday" />
+                <label class="form-check-label" for="Wednesday">
+                    <span>Wed</span></label>
+
+                <input class="form-check-input" type="hidden" value="false" id="ThursdayHidden" name="Thursday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Thursday3" name="Thursday" />
+                <label class="form-check-label" for="Thursday"> <span>Thu</span></label>
+
+                <input class="form-check-input" type="hidden" value="false" id="FridayHidden" name="Friday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Friday3" name="Friday" />
+                <label class="form-check-label" for="Friday"> <span>Fri</span></label>
+
+                <input class="form-check-input" type="hidden" value="false" id="SaturdayHidden" name="Saturday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Saturday3" name="Saturday" />
+                <label class="form-check-label" for="Saturday">
+                    <span>Sat</span>
+                </label>
+
+                <input class="form-check-input" type="hidden" value="false" id="SundayHidden" name="Sunday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Sunday3" name="Sunday" />
+                <label class="form-check-label" for="Sunday"> <span>Sun</span></label>
+
+            </div>
+
+
+            <br>
+            <br>
+            <div class="container">
+
+                <!-- <button class="btn-submit">Set Schedule</button>
+                 -->
+                <button class="reset3">Reset</button>
+
+            </div>
+
+        </form>
+    </div>
+
+    <div id="aerator-form">
+        <form>
+            <div class="display">
+                <label for="displayTimeOn">Time to turn ON: </label>
+                <span class="displayTimeOn" id="displayTimeOn"></span>
+                <span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+                <label for="displayTimeOff">Time to turn OFF: </label>
+                <span class="displayTimeOff" id="displayTimeOn"></span>
+
+
+            </div>
+            <br>
+
+            <div class="inputs">
+
+                <label for="time-on">&nbspSelect a time on:&nbsp</label>
+                <input class="form-select" type="time" id="time-on4" name="Time_On" required />
+
+                <label for="time-off">&nbsp&nbsp&nbspSelect a time off:&nbsp</label>
+                <input class="form-select" type="time" id="time-off4" name="Time_Off" required />
+
+                <br>
+
+
+            </div>
+
+            <br>
+
+            <div class="checklist">
+
+                <input class="form-check-input" type="checkbox" id="select-all4" />
+                <label class="form-check-label" for="Everyday"> <span>Everyday</span></label>
+
+                <input class="form-check-input" type="hidden" value="false" id="MondayHidden" name="Monday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Monday4" name="Monday" />
+                <label class="form-check-label" for="Monday"> <span>Mon</span></label>
+
+                <input class="form-check-input" type="hidden" value="false" id="TuesdayHidden" name="Tuesday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Tuesday4" name="Tuesday" />
+                <label class="form-check-label" for="Tuesday"> <span>Tue</span></label>
+
+                <input class="form-check-input" type="hidden" value="false" id="WednesdayHidden" name="Wednesday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Wednesday4" name="Wednesday" />
+                <label class="form-check-label" for="Wednesday">
+                    <span>Wed</span></label>
+
+                <input class="form-check-input" type="hidden" value="false" id="ThursdayHidden" name="Thursday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Thursday4" name="Thursday" />
+                <label class="form-check-label" for="Thursday"> <span>Thu</span></label>
+
+                <input class="form-check-input" type="hidden" value="false" id="FridayHidden" name="Friday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Friday4" name="Friday" />
+                <label class="form-check-label" for="Friday"> <span>Fri</span></label>
+
+                <input class="form-check-input" type="hidden" value="false" id="SaturdayHidden" name="Saturday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Saturday4" name="Saturday" />
+                <label class="form-check-label" for="Saturday">
+                    <span>Sat</span>
+                </label>
+
+                <input class="form-check-input" type="hidden" value="false" id="SundayHidden" name="Sunday" />
+                <input class="form-check-input" type="checkbox" value="true" id="Sunday4" name="Sunday" />
+                <label class="form-check-label" for="Sunday"> <span>Sun</span></label>
+
+            </div>
+
+
+            <br>
+            <br>
+            <div class="container">
+
+                <!-- <button class="btn-submit">Set Schedule</button>
+                 -->
+                <button class="reset4">Reset</button>
+
+            </div>
+
+        </form>
+
+        <br>
+        <br>
+        <hr style="height:2px;border-width:0;width:95%;color:rgb(180, 180, 180);background-color:rgb(180, 180, 180)">
+
+    </div>
+
+    <br>
+
+    <h1>Analysis</h1>
+
+
+    <div id="graphcontainer1">
+        <canvas id="myChart1" class="graph"></canvas>
+    </div>
+    <div class="container">
+
+        <!-- <button class="btn-submit">Set Schedule</button>
+             -->
+        <form class="date-range">
+            <label>Start Date:</label>
+            <input type="text" id="startDate" required>
+            <label>End Date:</label>
+            <input type="text" id="endDate" required>
+            <button class="download1" type="submit">Download Excel</button>
+        </form>
+
+    </div>
+    <div id="graphcontainer2">
+        <canvas id="myChart2" class="graph"></canvas>
+        <div class="container">
+
+            <!-- <button class="btn-submit">Set Schedule</button>
+                 -->
+            <form class="date-range1">
+                <label>Start Date:</label>
+                <input type="text" id="startDate1" required>
+                <label>End Date:</label>
+                <input type="text" id="endDate1" required>
+                <button class="download2" type="submit">Download Excel</button>
+            </form>
+
+        </div>
+    </div>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+
+    <script src="/client.js"></script>
+
+    <!-- <script src="sched.js"></script> -->
+
+
+
+    <!-- <script src="analytics.js"></script> -->
+
+    <!-- <script>
+
+//const socket = io.connect(window.location.origin)
+        // SETUP Block
+      
+        const labels1 = [];
+        const today = new Date();
+        for (let i = 6; i >= 0; i--) {
+          const date = new Date(today);
+          date.setDate(today.getDate() - i);
+          labels1.push(date.toLocaleDateString());
+        
+        }
+        socket.emit('res', labels1);
+        console.log(labels1);
+  
+        const ctx1 = document.getElementById("myChart1").getContext("2d");
+        const data1 = {
+          labels: labels1,
+          datasets: [
+            {
+              label: "WaterTemp",
+              backgroundColor: "#576CBC",
+              borderColor: "#576CBC",
+              data: [1, 2, 3, 4, 5, 6, 7],
+              lineTension: 0.5,
+            },
+            {
+              label: "RoomTemp",
+              backgroundColor: "#B9E9FC",
+              borderColor: "#B9E9FC",
+              data: [5, 15, 12, 2, 20, 30, 45],
+              lineTension: 0.5,
+            },
+          ],
+        };
+  
+        // Config Block
+        const config1 = {
+          type: "line",
+          data: data1,
+          options: {},
+        };
+  
+        // Render Block
+        var myChart1 = new Chart(ctx1, config1);
+      </script>
+   -->
+    <!-- <script>
+        // SETUP Block
+      
+    </script> -->
+
+    <!-- <script>
+      // SETUP Block
+      const labels3 = [];
+      const today3 = new Date();
+      for (let i = 6; i >= 0; i--) {
+        const date3 = new Date(today2);
+        date3.setDate(today3.getDate() - i);
+        labels3.push(date3.toLocaleDateString());
+      }
+  
+      const ctx3 = document.getElementById("myChart3").getContext("2d");
+      const data3 = {
+        labels: labels3,
+        datasets: [
+           {
+              label: "pH",
+              backgroundColor: "#139e21",
+              borderColor: "#139e21",
+              data: [20, 10, 35, 0, 15, 25, 40],
+              lineTension: 0.5,
+            },
+            {
+              label: "Electrical Conductivity",
+              backgroundColor: "#050505",
+              borderColor: "#050505",
+              data: [25, 20, 12, 10, 15, 30, 35],
+              lineTension: 0.5,
+            },
+        ],
+      };
+      // Config Block
+      const config3 = {
+        type: "line",
+        data: data3,
+        options: {},
+      };
+  
+      // Render Block
+      var myChart3 = new Chart(ctx3, config3);
+    </script> -->
+
+</body>
+
+
+
+<%- include('html_footer_tag') -%>
+
+

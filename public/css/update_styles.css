@@ -1,0 +1,437 @@
+/* set background color */
+/*body {
+    background-color: #b3fe92;
+  }*/
+  
+  /* style for sensor readings */
+  .outer-container-1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* styles for smaller screens */
+  @media (max-width: 768px) {
+    .outer-container-1 {
+      flex-direction: column;
+      align-items: center;
+    }
+    .container-1,
+    .container-2,
+    .container-3,
+    .container-4,
+    .container-5,
+    .container-6 {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  /* styles for larger screens */
+  @media (min-width: 769px) {
+    .container-1,
+    .container-2,
+    .container-3,
+    .container-4,
+    .container-5,
+    .container-6 {
+      width: 200px;
+      margin-right: 20px;
+    }
+    .container-6 {
+      margin-right: 0;
+    }
+  }
+
+  h1 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+
+  }
+  
+  .container-1,
+  .container-2,
+  .container-3,
+  .container-4,
+  .container-5,
+  .container-6 {
+    list-style: none;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
+    height: 150px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  /* icon style */
+  .fa-temperature-half,
+  .fa-thermometer,
+  .fa-vials,
+  .fa-wind,
+  .fa-temperature-high {
+    font-size: 30px;
+    position: absolute;
+  }
+
+  .unit1,
+  .unit2,
+  .unit3,
+  .unit4,
+  .unit5 {
+    font-size: 30px;
+    position: relative;
+    bottom: 50px;
+  }
+
+  /* sensor value style */
+  .sensors {
+    font-size: 4em;
+    font-family: 'Poppins', sans-serif;
+    color: #2c3e50;
+    font-weight: bold;
+    position: relative;
+    top: 25px;
+  }
+  
+  /* sensor label style */
+  .label-1,
+  .label-2,
+  .label-3,
+  .label-4,
+  .label-5 {
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    color: #4e4e4e;
+    letter-spacing: 1px;
+    position: relative;
+    top: 60px
+  }
+
+/* control panel */
+/* Style for the outer container */
+.outer-container-2 {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+
+  }
+  
+  /* Style for the list items */
+  .container-7,
+  .container-8,
+  .container-9,
+  .container-10,
+  .container-11 {
+    width: 150px;
+    height: 150px;
+    background-color: #ffffff;
+    margin: 5px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    color:  #000000;
+    border: 2px solid rgb(255, 255, 255);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  /* Style for the switch labels */
+  .toggle-1,
+  .toggle-2,
+  .toggle-3,
+  .toggle-4,
+  .toggle-5 {
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 30px;
+    width: 70px;
+    height: 30px;
+    background-color: #ffffff;
+    position: relative;
+    border: 3px solid #008111;
+  }
+  
+  /* Style for the switch inputs */
+  .checkbox,
+  .checkbox1,
+  .checkbox2,
+  .checkbox3,
+  .checkbox4 {
+    display: none;
+  }
+  
+  /* Style for the switch labels when toggled on */
+  .toggle-1:before,
+  .toggle-2:before,
+  .toggle-3:before,
+  .toggle-4:before,
+  .toggle-5:before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color:  #d3d3d3;
+    top: 0;
+    left: 0;
+    transition: all 0.2s;
+  }
+  
+  /* Style for the switch labels when toggled off */
+  .toggle-1 p,
+  .toggle-2 p,
+  .toggle-3 p,
+  .toggle-4 p,
+  .toggle-5 p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  /* Style for the switch inputs when toggled on */
+  .checkbox:checked + .toggle-1:before,
+  .checkbox1:checked + .toggle-2:before,
+  .checkbox2:checked + .toggle-3:before,
+  .checkbox3:checked + .toggle-4:before,
+  .checkbox4:checked + .toggle-5:before {
+    transform: translateX(40px);
+    background-color: #008111;
+  }
+
+/* scheduler */
+/* Set styles for the overall container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  
+}
+
+/* Set styles for the button group */
+.btn-group {
+  display: flex;
+  justify-content: center;
+}
+
+/* Set styles for the buttons */
+button#grow,
+button#water,
+button#mist,
+button#fan,
+button#aerator {
+  align-items: center;
+  background-color: #fff;
+  border: 2.5px solid #ffffff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-sizing: border-box;
+  color: #000;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: -.8px;
+  line-height: 24px;
+  min-width: 140px;
+  outline: 0;
+  padding: 0 17px;
+  border-radius: 10px;
+  margin: 3px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+button#grow,
+button#water,
+button#mist,
+button#fan,
+button#aerator :focus {
+  color: #171e29;
+}
+
+button#grow:hover,
+button#water:hover,
+button#mist:hover,
+button#fan:hover,
+button#aerator:hover {
+  border-color: rgb(54, 133, 15);
+  color: rgb(0, 130, 50);
+  fill: rgb(0, 130, 50);
+  box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+  transform: scale(1.1);
+}
+
+
+button#grow:active,
+button#water:active,
+button#mist:active,
+button#fan:active,
+button#aerator:active {
+  border-color: rgb(54, 133, 15);
+  color: rgb(0, 130, 50);
+  fill: rgb(0, 130, 50);
+  transform: scale(1.1);
+}
+
+@media (min-width: 768px) {
+  button#grow,
+  button#water,
+  button#mist,
+  button#fan,
+  button#aerator {
+    min-width: 170px;
+  }
+}
+
+button.reset,
+button.reset1,
+button.reset2,
+button.reset3,
+button.reset4 {
+  background-color: #13aa52;
+  border: 1px solid #13aa52;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  outline: 0;
+  padding: 10px 25px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-bottom: 50px;
+}
+
+button.reset:hover,
+button.reset1:hover,
+button.reset2:hover,
+button.reset3:hover,
+button.reset4:hover {
+  box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+  /* transform: translateY(-2px); */
+  transform: scale(1.1);
+}
+
+@media (min-width: 768px) {
+  button.reset,
+  button.reset1,
+  button.reset2,
+  button.reset3,
+  button.reset4 {
+    padding: 10px 30px;
+  }
+}
+
+/* Set styles for the form display and inputs */
+.display, .inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Set styles for the time display and input fields */
+label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.displayTimeOn, .displayTimeOff {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.form-select {
+  font-size: 20px;
+  padding: 5px;
+  margin-right: 10px;
+  border-radius: 5px
+}
+
+/* Set styles for the checkbox list */
+.checklist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-check-label {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.form-check-input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+button.download1,
+button.download2,
+button.download3 {
+  background-color: #13aa52;
+  border: 1px solid #13aa52;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  outline: 0;
+  padding: 10px 25px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-bottom: 50px;
+}
+
+button.download1:hover,
+button.download2:hover,
+button.download3:hover {
+  box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+  /* transform: translateY(-2px); */
+  transform: scale(1.1);
+}
