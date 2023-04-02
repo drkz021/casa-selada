@@ -259,7 +259,7 @@ io.sockets.on("connection", socket => {
   
       if (arg == true) {
         io.emit("aerator", arg);
-        const url = "http://192.168.1.107/cm?cmnd=Power%20On";
+        const url = "http://192.168.1.158/cm?cmnd=Power%20On";
         con.query(` UPDATE status SET aerator = 'ON' WHERE status.id = 1;`, function (err, result, fields) {
   
           // if (err) throw err;
@@ -275,7 +275,7 @@ io.sockets.on("connection", socket => {
       }
       else {
         io.emit("aerator", arg);
-        const url = "http://192.168.1.107/cm?cmnd=Power%20Off";
+        const url = "http://192.168.1.158/cm?cmnd=Power%20Off";
         con.query(` UPDATE status SET aerator = 'OFF' WHERE status.id = 1;`, function (err, result, fields) {
   
           // if (err) throw err;
@@ -1320,11 +1320,11 @@ const renderTime = () => {
 
     if (result[0][day[d.getDay()]] == 1 && result[0]['time_on'] == hour + ":" + minutes) {
       //   console.log('functioning...');
-      const url = "http://192.168.1.245/cm?cmnd=Power%20On";
+      const url = "http://192.168.1.158/cm?cmnd=Power%20On";
       request.get(url, (error, response, body) => { });
     }
     if (result[0][day[d.getDay()]] == 1 && result[0]['time_off'] == hour + ":" + minutes) {
-      const url = "http://192.168.1.245/cm?cmnd=Power%20Off";
+      const url = "http://192.168.1.158/cm?cmnd=Power%20Off";
       request.get(url, (error, response, body) => { });
     }
   });
