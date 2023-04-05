@@ -50,41 +50,23 @@ con1.connect(function (err) {
 
 // login user
 router.get('/login', (req, res)=>{
-  
-    // console.log(req);
- //   res.send(req.query.email);
- try {
-    con1.query(`SELECT * FROM users`, function (err, result, fields) {
-     for (let i = 0; i < result.length; i++) {
-        if (result[i]['email'] == req.query.email) {
-            if(req.query.email == result[i]['email'] && req.query.password ==  result[i]['password'] && result[i]['code']== 'verified'){
-                req.session.user = req.query.email ;
-                //res.send('Logged IN');
-                 res.redirect('/route/dashboard');
-                //res.end("Login Successful...!");
+    try {
+        con1.query(`SELECT * FROM users`, function (err, result, fields) {
+            for (let i = 0; i < result.length; i++) {
+                if (result[i]['email'] == req.query.email) {
+                    if(req.query.email == result[i]['email'] && req.query.password ==  result[i]['password'] && result[i]['code']== 'verified'){
+                        req.session.user = req.query.email ;
+                        res.redirect('/route/dashboard');
+                    }
+                    else{
+                        res.render('error');
+                    }
+                }
             }
-            else{
-              //  res.send('Failed');
-                res.render('error');
-            }
-        }
-      
-        
-     }
-
-      
-        //console.log(result);
-  
-    });   
- } catch (error) {
-    res.send('Failed');
- }
-  
-//     console.log(req.query.email);
-//    console.log(req.query.password);
-//    console.log(req.session);
-    
-    
+        });
+    } catch (error) {
+        res.send('Failed');
+    }
 });
 
 
@@ -93,8 +75,8 @@ router.get('/login', (req, res)=>{
 router.get('/dashboard', (req, res) => {
     if(req.session.user){
         res.render('dashboard',{title: "Fiber Optic Dashboard"})
-    }else{
-        res.render('error');
+    }else {
+        res.status(401).render('error', { message: "Invalid email or password" });
     }
 });
 
